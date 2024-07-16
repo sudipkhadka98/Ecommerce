@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <div class="container-fluid min-vh-100 d-flex align-items-center">
+        <div class="row w-100">
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div class="login-container">
+                    <form id="main_form" action="" method="post" class="login-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value="Login" class="btn btn-primary w-100">
+                    </form>
+                    <div class="register-container text-center mt-3">
+                        <span class="register-text">Register now:</span>
+                        <a href="{% url 'signup' %}" class="btn btn-secondary">SignUp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <img src="{% static 'images/image.png' %}" alt="Login Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

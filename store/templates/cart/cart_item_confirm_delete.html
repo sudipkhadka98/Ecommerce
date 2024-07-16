@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+{% block title %}Remove Item{% endblock %}
+
+{% block content %}
+<h1>Remove Item</h1>
+<p>Are you sure you want to remove {{ object.product.product_name }} from your cart?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Remove</button>
+    <a href="{% url 'cartitem_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

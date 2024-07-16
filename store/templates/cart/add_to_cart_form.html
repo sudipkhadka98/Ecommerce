@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+
+{% block title %}Add to Cart{% endblock %}
+
+{% block content %}
+<h1>Add to Cart</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Add to Cart</button>
+</form>
+{% endblock %}

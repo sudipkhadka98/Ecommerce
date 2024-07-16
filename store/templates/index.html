@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1 id="index2">Welcome to my shop</h1>
+    <p id="index3">This is an online shop. Here you can shop different items on a single platform. If you want to buy something, please register your account.</p>
+    <img src="{% static 'images/image.png' %}" alt="Shop Image" class="imge-fluid my-4">
+    <div class="object-menu">
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a></li>
+            <li class="list-inline-item"><a href="{% url 'login' %}" class="btn btn-secondary">Login</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

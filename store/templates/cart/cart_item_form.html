@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+{% block title %}Update Cart Item{% endblock %}
+
+{% block content %}
+<h1>Update Cart Item</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="{% url 'cartitem_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
